@@ -109,9 +109,13 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+
+
+
             notificationManager.sendNotification(context, downloadStateExtra, name)
 
             custom_button.buttonState(ButtonState.Completed)
+
         }
     }
 

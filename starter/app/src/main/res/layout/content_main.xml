@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:text="@string/retrofit"
+            android:text="@string/glide"
             android:textSize="25sp"
             />
 
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:text="@string/glide"
+            android:text="@string/retrofit"
             android:textSize="25sp"/>
     </RadioGroup>
 

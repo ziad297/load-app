@@ -13,30 +13,30 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         setSupportActionBar(toolbar)
-
+        val tag = "DetailActivity"
         val intent = this.intent
-        val state = intent.getStringExtra("download_state")
-        val fileName = intent.getStringExtra("filename_extra")
+        val s = intent.getStringExtra("download_state")
+        val name = intent.getStringExtra("filename_extra")
+        Log.d(tag, "onCreate: $s")
+        Log.d(tag, "onCreate: $name")
+        fileNameTV.text = name ?: "N/A"
 
-        fileNameTV.text = fileName ?: "N/A"
-        if (state == "successful") {
             statusTV.apply {
                 text = getString(R.string.succeeded)
                 setTextColor(getColor(R.color.green))
             }
-        } else if (state == "Failure") {
+        if (s == "Failure") {
             statusTV.apply {
-                text = getString(R.string.failure)
+               text = getString(R.string.failure)
                 setTextColor(getColor(R.color.red))
             }
         }
+
 
         okButton.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
-
-
     }
 
 }
