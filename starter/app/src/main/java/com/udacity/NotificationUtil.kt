@@ -1,5 +1,6 @@
 package com.udacity
 
+import android.annotation.SuppressLint
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
@@ -9,6 +10,7 @@ import androidx.core.app.NotificationCompat
 
 private const val notification_id = 0
 
+@SuppressLint("UnspecifiedImmutableFlag")
 fun NotificationManager.sendNotification(context: Context, downloadResult: String, file: String) {
     val detailActivityIntent = Intent(
         context,
@@ -35,7 +37,7 @@ fun NotificationManager.sendNotification(context: Context, downloadResult: Strin
         .setAutoCancel(false)
         .addAction(
             R.drawable.abc_vector_test,
-            R.string.notification_button.toString(),
+            context.getString(R.string.notification_button),
             pendingIntent
         )
         .setPriority(NotificationCompat.PRIORITY_HIGH)
